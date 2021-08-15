@@ -113,3 +113,34 @@ mysql> SELECT * FROM employee_payroll
 |  3 | CMDSHAKEEL | 10000000 | 2021-01-03 |
 +----+------------+----------+------------+
 1 row in set (0.00 sec)
+
+**********************************************************
+
+#UC - 6
+
+mysql> ALTER TABLE employee_payroll ADD gender CHAR(1) AFTER name;
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> update employee_payroll set gender = 'm' where name='CMDSHAKEEL';
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update employee_payroll set gender = 'f' where name='CMD';
+Query OK, 2 rows affected (0.02 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update employee_payroll set salary = 500000000 where name='CMDSHAKEEL';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM employee_payroll
+    -> ;
++----+------------+--------+-----------+------------+
+| id | name       | gender | salary    | start      |
++----+------------+--------+-----------+------------+
+|  1 | CMD        | f      |  10000000 | 2019-01-03 |
+|  2 | CMD        | f      |  10000000 | 2019-01-03 |
+|  3 | CMDSHAKEEL | m      | 500000000 | 2021-01-03 |
++----+------------+--------+-----------+------------+
+3 rows in set (0.01 sec)
