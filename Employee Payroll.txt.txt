@@ -78,8 +78,8 @@ mysql> SELECT * FROM employee_payroll;
 +----+------------+----------+------------+
 3 rows in set (0.04 sec)
 
-
-UC-4
+*************************************
+#UC-4
 
 
 mysql> SELECT salary FROM employee_payroll WHERE name = 'CMD';
@@ -100,3 +100,16 @@ mysql> SELECT * FROM employee_payroll
 |  2 | CMD        | 10000000 | 2019-01-03 |
 |  3 | CMDSHAKEEL | 10000000 | 2021-01-03 |
 +----+------------+----------+------------+
+
+********************************************************
+
+#UC-5
+
+mysql> SELECT * FROM employee_payroll
+    -> WHERE start BETWEEN CAST('2021-01-01' AS DATE) AND  DATE(NOW());
++----+------------+----------+------------+
+| id | name       | salary   | start      |
++----+------------+----------+------------+
+|  3 | CMDSHAKEEL | 10000000 | 2021-01-03 |
++----+------------+----------+------------+
+1 row in set (0.00 sec)
