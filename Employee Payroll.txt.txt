@@ -192,4 +192,4 @@ mysql> SELECT gender, sum(salary) from employee_payroll group by gender;
 | f      |    20000000 |
 | m      |   500000000 |
 +--------+-------------+
-2 rows in set (0.00 sec)
+2 rows in set (0.00 sec)gr
